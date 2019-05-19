@@ -377,18 +377,7 @@ private extension CameraViewController {
     videoPreviewLayer.frame = view.layer.bounds
 
     if let connection = videoPreviewLayer.connection, connection.isVideoOrientationSupported {
-      switch UIApplication.shared.statusBarOrientation {
-      case .portrait:
-        connection.videoOrientation = .portrait
-      case .landscapeRight:
-        connection.videoOrientation = .landscapeRight
-      case .landscapeLeft:
-        connection.videoOrientation = .landscapeLeft
-      case .portraitUpsideDown:
-        connection.videoOrientation = .portraitUpsideDown
-      default:
-        connection.videoOrientation = .portrait
-      }
+      connection.videoOrientation = .portrait
     }
   }
 }
